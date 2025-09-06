@@ -51,6 +51,7 @@ return {
 			{ "typescript-language-server", false, {} },
 			{ "emmet-ls", false, {} },
 			{ "rust-analyzer", true, {} },
+			{ "nil", false, {} },
 		}
 
 		for _, server_config in ipairs(servers) do

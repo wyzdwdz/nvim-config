@@ -3,7 +3,7 @@ return {
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 	},
-	event = "User Masonloaded",
+	event = "VeryLazy",
 	config = function()
 		local registry = require("mason-registry")
 
@@ -15,11 +15,13 @@ return {
 		end
 
 		install("stylua")
+		install("nixfmt")
 
 		local null_ls = require("null-ls")
 		null_ls.setup({
 			sources = {
 				null_ls.builtins.formatting.stylua,
+				null_ls.builtins.formatting.nixfmt,
 			},
 		})
 	end,
