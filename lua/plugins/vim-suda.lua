@@ -1,5 +1,7 @@
 return {
 	"lambdalisue/vim-suda",
 	event = "VeryLazy",
-	opts = {},
+	config = function()
+		require("vim-suda")
+	end,
 }
