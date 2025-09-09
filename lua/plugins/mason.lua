@@ -47,11 +47,38 @@ return {
 			},
 			{ "pyright", false, {} },
 			{ "html-lsp", false, {} },
-			{ "css-lsp", false, {} },
+			{
+				"css-lsp",
+				false,
+				{
+					settings = {
+						css = {
+							validate = true,
+							lint = {
+								unknownAtRules = "ignore",
+							},
+						},
+						scss = {
+							validate = true,
+							lint = {
+								unknownAtRules = "ignore",
+							},
+						},
+						less = {
+							validate = true,
+							lint = {
+								unknownAtRules = "ignore",
+							},
+						},
+					},
+				},
+			},
 			{ "typescript-language-server", false, {} },
 			{ "emmet-ls", false, {} },
 			{ "rust-analyzer", true, {} },
+			{ "taplo", true, {} },
 			{ "nil", false, {} },
+			{ "marksman", false, {} },
 		}
 
 		for _, server_config in ipairs(servers) do
