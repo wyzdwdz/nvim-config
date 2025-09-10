@@ -75,11 +75,13 @@ return {
 			},
 			{ "typescript-language-server", false, {} },
 			{ "emmet-ls", false, {} },
-			{ "rust-analyzer", true, {} },
 			{ "taplo", true, {} },
-			{ "nil", false, {} },
 			{ "marksman", false, {} },
 		}
+
+		if vim.loop.os_uname().sysname == "Linux" then
+			table.insert(servers, { "nil", false, {} })
+		end
 
 		for _, server_config in ipairs(servers) do
 			local server = server_config[1]

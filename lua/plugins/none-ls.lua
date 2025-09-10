@@ -15,8 +15,11 @@ return {
 		end
 
 		install("stylua")
-		install("nixfmt")
 		install("prettier")
+
+		if vim.loop.os_uname().sysname == "Linux" then
+			install("nixfmt")
+		end
 
 		local null_ls = require("null-ls")
 		null_ls.setup({
