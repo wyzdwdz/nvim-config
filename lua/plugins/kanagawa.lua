@@ -3,6 +3,6 @@ return {
 	lazy = false,
 	config = function()
 		require("kanagawa").setup({})
-		vim.cmd("colorscheme kanagawa-dragon")
+		vim.cmd("colorscheme kanagawa")
 	end,
 }
