@@ -16,6 +16,8 @@ return {
             "html",
             "markdown",
             "markdown_inline",
+            "c",
+            "cpp",
 		},
 		highlight = { enable = true },
 	},

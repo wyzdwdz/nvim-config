@@ -16,10 +16,8 @@ return {
 
 		install("stylua")
 		install("prettier")
-
-		if vim.loop.os_uname().sysname == "Linux" then
-			install("nixfmt")
-		end
+		install("clang-format")
+        install("nixfmt")
 
 		local null_ls = require("null-ls")
 		null_ls.setup({
@@ -27,6 +25,7 @@ return {
 				null_ls.builtins.formatting.stylua,
 				null_ls.builtins.formatting.nixfmt,
 				null_ls.builtins.formatting.prettier,
+				null_ls.builtins.formatting.clang_format,
 			},
 		})
 	end,

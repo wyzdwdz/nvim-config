@@ -77,9 +77,10 @@ return {
 			{ "emmet-ls", false, {} },
 			{ "taplo", true, {} },
 			{ "marksman", false, {} },
+			{ "clangd", false, {} },
 		}
 
-		if vim.loop.os_uname().sysname == "Win32" or vim.loop.os_uname().sysname == "Darwin" then
+		if vim.loop.os_uname().sysname == "Linux" or vim.loop.os_uname().sysname == "Darwin" then
 			table.insert(servers, { "nil", false, {} })
 		end
 
