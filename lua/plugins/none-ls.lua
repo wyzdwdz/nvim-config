@@ -26,6 +26,7 @@ return {
 				null_ls.builtins.formatting.nixfmt,
 				null_ls.builtins.formatting.prettier,
 				null_ls.builtins.formatting.clang_format,
+				null_ls.builtins.formatting.cmake_format,
 			},
 		})
 	end,

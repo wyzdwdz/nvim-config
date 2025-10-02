@@ -10,10 +10,17 @@ return {
 		require("mason").setup(opts)
 		local registry = require("mason-registry")
 
-		local function setup(name, enable_formatter, config)
+		local function setup(name, enable_formatter, use_local, config)
 			local success, package = pcall(registry.get_package, name)
-			if success and not package:is_installed() then
-				package:install()
+
+			if not use_local then
+				if success and not package:is_installed() then
+					package:install()
+				end
+			else
+				if success and package:is_installed() then
+					package:uninstall()
+				end
 			end
 
 			local nvim_lsp = require("mason-lspconfig").get_mappings().package_to_lspconfig[name]
@@ -35,6 +42,7 @@ return {
 			{
 				"lua-language-server",
 				false,
+				false,
 				{
 					settings = {
 						Lua = {
@@ -45,10 +53,11 @@ return {
 					},
 				},
 			},
-			{ "pyright", false, {} },
-			{ "html-lsp", false, {} },
+			{ "pyright", false, false, {} },
+			{ "html-lsp", false, false, {} },
 			{
 				"css-lsp",
+				false,
 				false,
 				{
 					settings = {
@@ -73,23 +82,25 @@ return {
 					},
 				},
 			},
-			{ "typescript-language-server", false, {} },
-			{ "emmet-ls", false, {} },
-			{ "taplo", true, {} },
-			{ "marksman", false, {} },
-			{ "clangd", false, {} },
+			{ "typescript-language-server", false, false, {} },
+			{ "emmet-ls", false, false, {} },
+			{ "taplo", true, false, {} },
+			{ "marksman", false, false, {} },
+			{ "clangd", false, true, {} },
+			{ "cmake-language-server", false, false, {} },
 		}
 
 		if vim.loop.os_uname().sysname == "Linux" or vim.loop.os_uname().sysname == "Darwin" then
-			table.insert(servers, { "nil", false, {} })
+			table.insert(servers, { "nil", false, false, {} })
 		end
 
 		for _, server_config in ipairs(servers) do
 			local server = server_config[1]
 			local enable_formatter = server_config[2]
-			local config = server_config[3]
+			local use_local = server_config[3]
+			local config = server_config[4]
 
-			setup(server, enable_formatter, config)
+			setup(server, enable_formatter, use_local, config)
 		end
 
 		vim.diagnostic.config({
