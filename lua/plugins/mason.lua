@@ -86,12 +86,14 @@ return {
 			{ "emmet-ls", false, false, {} },
 			{ "taplo", true, false, {} },
 			{ "marksman", false, false, {} },
-			{ "clangd", false, true, {} },
 			{ "cmake-language-server", false, false, {} },
 		}
 
 		if vim.loop.os_uname().sysname == "Linux" or vim.loop.os_uname().sysname == "Darwin" then
 			table.insert(servers, { "nil", false, false, {} })
+			table.insert(servers, { "clangd", false, true, {} })
+		else
+			table.insert(servers, { "clangd", false, false, {} })
 		end
 
 		for _, server_config in ipairs(servers) do
