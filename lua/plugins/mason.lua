@@ -82,6 +82,7 @@ return {
 					},
 				},
 			},
+			{ "biome", false, false, {} },
 			{ "typescript-language-server", false, false, {} },
 			{ "emmet-ls", false, false, {} },
 			{ "taplo", true, false, {} },
