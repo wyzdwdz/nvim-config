@@ -16,8 +16,8 @@ return {
 
 		install("stylua")
 		install("clang-format")
-        install("nixfmt")
-        install("black")
+		install("nixfmt")
+		install("black")
 
 		local null_ls = require("null-ls")
 		null_ls.setup({
@@ -28,6 +28,7 @@ return {
 				null_ls.builtins.formatting.clang_format,
 				null_ls.builtins.formatting.cmake_format,
 				null_ls.builtins.formatting.black,
+				null_ls.builtins.formatting.gofmt,
 			},
 		})
 	end,

@@ -19,6 +19,7 @@ return {
 			"c",
 			"cpp",
 			"cmake",
+			"go",
 		},
 		highlight = { enable = true },
 	},
