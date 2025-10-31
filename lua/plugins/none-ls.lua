@@ -24,7 +24,6 @@ return {
 			sources = {
 				null_ls.builtins.formatting.stylua,
 				null_ls.builtins.formatting.nixfmt,
-				null_ls.builtins.formatting.biome,
 				null_ls.builtins.formatting.clang_format,
 				null_ls.builtins.formatting.cmake_format,
 				null_ls.builtins.formatting.black,

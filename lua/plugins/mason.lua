@@ -54,35 +54,7 @@ return {
 				},
 			},
 			{ "basedpyright", false, false, {} },
-			{ "html-lsp", false, false, {} },
-			{
-				"css-lsp",
-				false,
-				false,
-				{
-					settings = {
-						css = {
-							validate = true,
-							lint = {
-								unknownAtRules = "ignore",
-							},
-						},
-						scss = {
-							validate = true,
-							lint = {
-								unknownAtRules = "ignore",
-							},
-						},
-						less = {
-							validate = true,
-							lint = {
-								unknownAtRules = "ignore",
-							},
-						},
-					},
-				},
-			},
-			{ "biome", false, false, {} },
+			{ "biome", true, false, {} },
 			{ "typescript-language-server", false, false, {} },
 			{ "emmet-ls", false, false, {} },
 			{ "taplo", true, false, {} },
