@@ -28,3 +28,12 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.nrformats = "bin,hex,alpha"
 
 vim.opt.signcolumn = "yes"
+
+if vim.loop.os_uname().sysname == "Windows_NT" then
+	vim.cmd([[
+        set shell=powershell
+        set shellcmdflag=-command
+        set shellquote=\"
+        set shellxquote=
+    ]])
+end
