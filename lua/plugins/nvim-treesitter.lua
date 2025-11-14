@@ -20,6 +20,7 @@ return {
 			"cpp",
 			"cmake",
 			"go",
+			"c_sharp",
 		},
 		highlight = { enable = true },
 	},
