@@ -62,6 +62,7 @@ return {
 			{ "cmake-language-server", false, false, {} },
 			{ "gopls", false, false, {} },
 			{ "nil", false, true, {} },
+			{ "csharp-language-server", false, false, {} },
 		}
 
 		if vim.loop.os_uname().sysname == "Linux" or vim.loop.os_uname().sysname == "Darwin" then
