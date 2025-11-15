@@ -16,7 +16,6 @@ return {
 
 		install("stylua")
 		install("clang-format")
-		install("nixfmt")
 		install("black")
 		install("cmakelang")
 

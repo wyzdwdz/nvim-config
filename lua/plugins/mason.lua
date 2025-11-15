@@ -61,10 +61,10 @@ return {
 			{ "marksman", false, false, {} },
 			{ "cmake-language-server", false, false, {} },
 			{ "gopls", false, false, {} },
+			{ "nil", false, true, {} },
 		}
 
 		if vim.loop.os_uname().sysname == "Linux" or vim.loop.os_uname().sysname == "Darwin" then
-			table.insert(servers, { "nil", false, false, {} })
 			table.insert(servers, { "clangd", false, true, {} })
 		else
 			table.insert(servers, { "clangd", false, false, {} })
