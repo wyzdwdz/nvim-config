@@ -54,6 +54,7 @@ return {
 				},
 			},
 			{ "basedpyright", false, false, {} },
+			{ "ruff", false, false, {} },
 			{ "biome", true, false, {} },
 			{ "typescript-language-server", false, false, {} },
 			{ "emmet-ls", false, false, {} },
@@ -62,7 +63,7 @@ return {
 			{ "cmake-language-server", false, false, {} },
 			{ "gopls", false, false, {} },
 			{ "nil", false, true, {} },
-			{ "csharp-language-server", false, false, {} },
+			{ "csharp-language-server", false, true, {} },
 		}
 
 		if vim.loop.os_uname().sysname == "Linux" or vim.loop.os_uname().sysname == "Darwin" then
