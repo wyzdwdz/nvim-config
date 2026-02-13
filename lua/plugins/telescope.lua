@@ -23,4 +23,9 @@ return {
 		telescope.setup(opts)
 		telescope.load_extension("fzf")
 	end,
+	keys = {
+		{ "<leader>tt", ":Telescope<CR>" },
+		{ "<leader>tl", ":Telescope live_grep<CR>" },
+		{ "<leader>tr", ":Telescope resume<CR>" },
+	},
 }

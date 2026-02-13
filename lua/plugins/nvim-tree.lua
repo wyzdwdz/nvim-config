@@ -24,5 +24,6 @@ return {
 	},
 	keys = {
 		{ "<leader>uf", ":NvimTreeToggle<CR>" },
+		{ "<leader>up", ":NvimTreeFindFile<CR>" },
 	},
 }
