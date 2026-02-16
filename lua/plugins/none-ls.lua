@@ -19,7 +19,7 @@ return {
 		install("black")
 		install("cmakelang")
 		install("csharpier")
-        install("prettier")
+		install("prettier")
 
 		local null_ls = require("null-ls")
 		null_ls.setup({

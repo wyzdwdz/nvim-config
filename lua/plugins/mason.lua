@@ -23,7 +23,7 @@ return {
 				end
 			end
 
-			local nvim_lsp = require("mason-lspconfig").get_mappings().package_to_lspconfig[name]
+			local nvim_lsp = require("mason-lspconfig").get_mappings().package_to_lspconfig[name] or name
 
 			config.capabilities = require("blink.cmp").get_lsp_capabilities()
 
@@ -34,7 +34,9 @@ return {
 				end
 			end
 
-			vim.lsp.config(nvim_lsp, config)
+			if config ~= nil then
+				vim.lsp.config(nvim_lsp, config)
+			end
 			vim.cmd.LspStart(nvim_lsp)
 		end
 
