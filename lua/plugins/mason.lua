@@ -37,7 +37,7 @@ return {
 			if config ~= nil then
 				vim.lsp.config(nvim_lsp, config)
 			end
-			vim.cmd.LspStart(nvim_lsp)
+			vim.lsp.enable(nvim_lsp)
 		end
 
 		local servers = {
@@ -61,7 +61,6 @@ return {
 			{ "eslint-lsp", false, false, {} },
 			{ "emmet-ls", false, false, {} },
 			{ "taplo", true, false, {} },
-			{ "marksman", false, false, {} },
 			{ "cmake-language-server", false, false, {} },
 			{ "gopls", false, false, {} },
 			{ "nil", false, true, {} },

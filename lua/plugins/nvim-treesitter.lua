@@ -1,9 +1,11 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
-	event = "VeryLazy",
-	main = "nvim-treesitter.configs",
-	opts = {
-		ensure_installed = {
+	lazy = false,
+	build = ":TSUpdate",
+	config = function()
+		local ts = require("nvim-treesitter")
+
+		ts.install({
 			"lua",
 			"toml",
 			"rust",
@@ -21,34 +23,21 @@ return {
 			"cmake",
 			"go",
 			"c_sharp",
-		},
-		highlight = { enable = true },
-	},
-	branch = "master",
-	-- config = function()
-	-- 	local nvim_treesitter = require("nvim-treesitter")
-	-- 	nvim_treesitter.setup()
-	--
-	-- 	local ensure_installed = { "lua", "toml" }
-	-- 	local pattern = {}
-	--
-	-- 	for _, parser in pairs(ensure_installed) do
-	-- 		local has_parser, _ = pcall(vim.treesitter.language.inspect, parser)
-	--
-	-- 		if not has_parser then
-	-- 			nvim_treesitter.install(parser)
-	-- 		else
-	-- 			pattern = vim.tbl_extend("keep", pattern, vim.treesitter.language.get_filetypes(parser))
-	-- 		end
-	-- 	end
-	--
-	-- 	vim.api.nvim_create_autocmd("FileType", {
-	-- 		pattern = pattern,
-	-- 		callback = function()
-	-- 			vim.treesitter.start()
-	-- 		end,
-	-- 	})
-	--
-	-- 	vim.api.nvim_exec_autocmds("FileType", {})
-	-- end,
+		})
+
+		local ts_group = vim.api.nvim_create_augroup("GlobalTreesitter", { clear = true })
+
+		vim.api.nvim_create_autocmd("FileType", {
+			group = ts_group,
+			callback = function(args)
+				local ok = pcall(vim.treesitter.start, args.buf)
+
+				if ok then
+					vim.opt_local.foldmethod = "expr"
+					vim.opt_local.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+					vim.opt_local.foldenable = false
+				end
+			end,
+		})
+	end,
 }
