@@ -61,10 +61,11 @@ return {
 			{ "eslint-lsp", false, false, {} },
 			{ "emmet-ls", false, false, {} },
 			{ "taplo", true, false, {} },
-			{ "cmake-language-server", false, false, {} },
+			{ "cmake-language-server", false, true, {} },
 			{ "gopls", false, false, {} },
 			{ "nil", false, true, {} },
 			{ "csharp-language-server", false, true, {} },
+			{ "qmlls", false, true, {} },
 		}
 
 		if vim.loop.os_uname().sysname == "Linux" or vim.loop.os_uname().sysname == "Darwin" then

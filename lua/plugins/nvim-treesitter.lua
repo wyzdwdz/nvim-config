@@ -23,6 +23,7 @@ return {
 			"cmake",
 			"go",
 			"c_sharp",
+			"qmljs",
 		})
 
 		local ts_group = vim.api.nvim_create_augroup("GlobalTreesitter", { clear = true })

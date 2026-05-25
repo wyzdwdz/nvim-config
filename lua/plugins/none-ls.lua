@@ -20,6 +20,7 @@ return {
 		install("cmakelang")
 		install("csharpier")
 		install("prettier")
+		install("qmlformat")
 
 		local null_ls = require("null-ls")
 		null_ls.setup({
@@ -32,6 +33,7 @@ return {
 				null_ls.builtins.formatting.gofmt,
 				null_ls.builtins.formatting.csharpier,
 				null_ls.builtins.formatting.prettier,
+				null_ls.builtins.formatting.qmlformat,
 			},
 		})
 	end,
