@@ -24,6 +24,7 @@ return {
 			"go",
 			"c_sharp",
 			"qmljs",
+			"dart",
 		})
 
 		local ts_group = vim.api.nvim_create_augroup("GlobalTreesitter", { clear = true })
