@@ -1,30 +1,18 @@
 return {
-	"nvim-treesitter/nvim-treesitter",
-	lazy = false,
-	build = ":TSUpdate",
+	"romus204/tree-sitter-manager.nvim",
+	dependencies = {},
 	config = function()
-		local ts = require("nvim-treesitter")
-
-		ts.install({
-			"lua",
-			"toml",
-			"rust",
-			"toml",
-			"nix",
-			"javascript",
-			"typescript",
-			"tsx",
-			"css",
-			"html",
-			"markdown",
-			"markdown_inline",
-			"c",
-			"cpp",
-			"cmake",
-			"go",
-			"c_sharp",
-			"qmljs",
-			"dart",
+		require("tree-sitter-manager").setup({
+			auto_install = true,
+			noauto_install = {
+				"c",
+				"lua",
+				"markdown",
+				"markdown_inline",
+				"query",
+				"vim",
+				"vimdoc",
+			},
 		})
 
 		local ts_group = vim.api.nvim_create_augroup("GlobalTreesitter", { clear = true })
