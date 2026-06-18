@@ -2,7 +2,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 
 vim.opt.cursorline = true
-vim.opt.colorcolumn = "81,121"
+vim.opt.colorcolumn = "80,100,120"
 
 vim.opt.expandtab = true
 vim.opt.tabstop = 4
