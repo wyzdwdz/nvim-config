@@ -66,6 +66,7 @@ return {
 			{ "nil", false, true, {} },
 			{ "csharp-language-server", false, true, {} },
 			{ "qmlls", false, true, {} },
+			{ "zls", true, false, {} },
 		}
 
 		if vim.loop.os_uname().sysname == "Linux" or vim.loop.os_uname().sysname == "Darwin" then
